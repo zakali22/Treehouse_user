@@ -1,5 +1,7 @@
 const https = require('https');
 
+const arguments = process.argv;
+
 const getUserData = (user) => {
   const userUrl = `https://teamtreehouse.com/${user}.json`;
   https.get(userUrl, (response) => {
@@ -12,3 +14,5 @@ const getUserData = (user) => {
     });
   });
 };
+
+getUserData(arguments[2]);
