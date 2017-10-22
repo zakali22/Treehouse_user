@@ -6,6 +6,9 @@ const getUserData = (user) => {
     let fullBody = '';
     response.on('data', (data) => {
       fullBody += data.toString();
+    }).on('end', () => {
+      const parsedData = JSON.parse(fullBody);
+      console.log(parsedData);
     });
   });
 };
